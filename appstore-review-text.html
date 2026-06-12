@@ -5,155 +5,198 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Charm Painter Sigil App Store Review Text</title>
   <style>
-    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #d8d7e6; background: #090817; }
+    :root { --bg:#090817; --panel:#17132a; --text:#d8d7e6; --muted:#8a86a8; --gold:#d6a94b; --cyan:#5be7ff; --blue:#2f8cff; --line:rgba(91,231,255,.28); }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: var(--text); background: radial-gradient(circle at top, #2a145a 0, #111a3a 34%, var(--bg) 100%); }
     main { width: min(980px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0 60px; }
     h1 { margin: 0 0 8px; font-size: 34px; letter-spacing: 0; color: #f3e7c0; }
-    .intro { color: #8a86a8; margin-bottom: 24px; }
-    .field { background: #17132a; border: 1px solid rgba(91,231,255,.28); border-radius: 8px; padding: 16px; margin: 14px 0; }
+    .intro { color: var(--muted); margin: 0 0 24px; line-height: 1.65; }
+    .field { background: rgba(23,19,42,.88); border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin: 14px 0; }
     .field-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    h2 { font-size: 17px; margin: 0 0 10px; color: #5be7ff; }
-    button { border: 0; background: #2f8cff; color: #fff; border-radius: 6px; padding: 8px 12px; cursor: pointer; }
-    textarea { width: 100%; min-height: 52px; resize: vertical; border: 1px solid rgba(91,231,255,.35); border-radius: 6px; padding: 10px; font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #d8d7e6; background: #0f0d20; box-sizing: border-box; }
-    .count { color: #8a86a8; font-size: 13px; margin: 8px 0 0; }
+    h2 { font-size: 17px; margin: 0 0 10px; color: var(--cyan); }
+    button { border: 0; background: var(--blue); color: #fff; border-radius: 6px; padding: 8px 12px; cursor: pointer; }
+    textarea { width: 100%; resize: vertical; border: 1px solid rgba(91,231,255,.35); border-radius: 6px; padding: 10px; font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--text); background: #0f0d20; }
+    .count { color: var(--muted); font-size: 13px; margin: 8px 0 0; }
   </style>
 </head>
 <body>
   <main>
     <h1>Charm Painter Sigil App Store Connect Fields</h1>
-    <p class="intro">Copy-ready release text and review fields for App Store Connect entry. Text is based on source gameplay: monster weakness labels, hand-drawn runes, and seal defense.</p>
-    <section class="field">
+    <p class="intro">Regenerated on 2026-06-12 from current gameplay facts: monsters show weakness labels, the player draws the matching rune, correct matches deal damage, Ward restores HP, and the game is iPhone-only offline play.</p>
+
+    <section class="field" data-field="app-name">
       <div class="field-head"><h2>App Name</h2><button type="button" data-copy="app-name">Copy</button></div>
-      <textarea id="app-name" readonly>Charm Painter Sigil</textarea>
+      <textarea id="app-name" rows="3" readonly>Charm Painter Sigil</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="subtitle">
       <div class="field-head"><h2>Subtitle</h2><button type="button" data-copy="subtitle">Copy</button></div>
-      <textarea id="subtitle" readonly>Draw Runes, Banish Spirits</textarea>
+      <textarea id="subtitle" rows="3" readonly>Draw Charms, Defeat Monsters</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="promotional-text">
       <div class="field-head"><h2>Promotional Text</h2><button type="button" data-copy="promotional-text">Copy</button></div>
-      <textarea id="promotional-text" readonly>Read each monster weakness, draw the matching charm, and hold the seal across 50 offline stages.</textarea>
+      <textarea id="promotional-text" rows="3" readonly>Study each monster weakness, draw the matching rune by hand, and protect the seal through 50 offline stages.</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="description">
       <div class="field-head"><h2>Description</h2><button type="button" data-copy="description">Copy</button></div>
-      <textarea id="description" readonly>Charm Painter Sigil is a dark rune-drawing puzzle game about defeating spirits with the correct hand-drawn charm.
+      <textarea id="description" rows="15" readonly>Charm Painter Sigil is a dark oriental rune-drawing puzzle game where every monster must be defeated with the correct hand-drawn charm.
 
-Each stage places you inside an ancient sigil chamber. Monsters descend toward the ward, and the front monster shows a rune weakness and HP. Read the label, draw the matching symbol in the lower casting box, then release to cast. Correct charms strike the monster with glowing energy. Wrong symbols fizzle, and missed monsters damage the seal.
+The rule is simple, but the pressure builds quickly: monsters descend toward your seal, and each monster carries a visible weakness label. Read the front monster, draw the matching rune in the lower sigil box, then release to cast. A correct rune damages the monster. A wrong shape fizzles, and any monster that reaches the ward damages your seal.
 
-Core gameplay:
-- Draw Flame, Frost, and Rift attack runes by hand.
-- Match the drawn rune to the front monster weakness.
-- Use Ward as a defensive charm to restore HP.
-- Clear the full wave to restore the seal and unlock the next stage.
-- Progress through 50 local levels with faster movement, more lanes, and tougher HP.
+What you do in each stage:
+- Check the front monster weakness and HP.
+- Draw Flame, Frost, or Rift when that monster requires it.
+- Use Ward as a defensive charm to recover HP instead of attacking.
+- Clear the full wave before the seal breaks.
+- Unlock and replay 50 local stages with faster waves, more lanes, and stronger monsters.
 
-The visual style is Dark Oriental Rune Fantasy: abyss-purple backgrounds, cyan spell glow, dark stone buttons, gold ritual accents, and spirit enemies crossing an old star-rift seal.
+The visual style is dark oriental rune fantasy: abyss-purple backgrounds, cyan spell lines, gold ritual accents, stone-button UI, and spirit monsters moving through an ancient star-rift seal.
 
-Charm Painter Sigil is built for short portrait sessions on iPhone. It is offline single-player, with no login, no ads, no in-app purchases, and no required internet connection.</textarea>
+Charm Painter Sigil is designed for short portrait sessions on iPhone. It is offline single-player and includes no login, no ads, no in-app purchases, no tracking, and no required internet connection.</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="keywords">
       <div class="field-head"><h2>Keywords</h2><button type="button" data-copy="keywords">Copy</button></div>
-      <textarea id="keywords" readonly>rune,sigil,charm,drawing,puzzle,spirits,seal,monster,offline,magic</textarea>
+      <textarea id="keywords" rows="3" readonly>rune,charm,sigil,drawing,monster,puzzle,magic,seal,offline,spells</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="support-url">
       <div class="field-head"><h2>Support URL</h2><button type="button" data-copy="support-url">Copy</button></div>
-      <textarea id="support-url" readonly>https://charm-painter-sigil.vercel.app</textarea>
+      <textarea id="support-url" rows="3" readonly>https://charm-painter-sigil.vercel.app</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="marketing-url">
       <div class="field-head"><h2>Marketing URL</h2><button type="button" data-copy="marketing-url">Copy</button></div>
-      <textarea id="marketing-url" readonly>https://charm-painter-sigil.vercel.app</textarea>
+      <textarea id="marketing-url" rows="3" readonly>https://charm-painter-sigil.vercel.app</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="privacy-policy-url">
       <div class="field-head"><h2>Privacy Policy URL</h2><button type="button" data-copy="privacy-policy-url">Copy</button></div>
-      <textarea id="privacy-policy-url" readonly>https://charm-painter-sigil.vercel.app/privacy.html</textarea>
+      <textarea id="privacy-policy-url" rows="3" readonly>https://charm-painter-sigil.vercel.app/privacy.html</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="version">
       <div class="field-head"><h2>Version</h2><button type="button" data-copy="version">Copy</button></div>
-      <textarea id="version" readonly>1.0</textarea>
+      <textarea id="version" rows="3" readonly>1.0</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="copyright">
       <div class="field-head"><h2>Copyright</h2><button type="button" data-copy="copyright">Copy</button></div>
-      <textarea id="copyright" readonly>© 2026 xiao wangyu</textarea>
+      <textarea id="copyright" rows="3" readonly>© 2026 xiao wangyu</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="review-notes">
       <div class="field-head"><h2>Review Notes</h2><button type="button" data-copy="review-notes">Copy</button></div>
-      <textarea id="review-notes" readonly>No sign-in is required.
+      <textarea id="review-notes" rows="15" readonly>No sign-in is required.
 
-Test steps:
-1. Launch the app on iPhone.
-2. Tap Continue to enter the current unlocked stage.
-3. Read the front monster label above the enemy. It shows the required rune name and HP.
-4. Draw the requested rune in the bottom sigil box and release to cast.
-5. A correct rune damages the front monster; an incorrect rune shows a red fail effect.
-6. Use Ward as a defensive small loop to restore HP instead of attacking.
-7. Clear all monsters to see the Seal Restored result screen.
-8. Use Stages to open unlocked levels and Settings to toggle Music and Sound Effects.
+Gameplay test steps:
+1. Launch Charm Painter Sigil on iPhone.
+2. Tap Continue from the main menu.
+3. In the stage, look at the front monster label. It shows the monster weakness and HP.
+4. Draw the matching rune inside the bottom sigil drawing box, then release your finger to cast.
+5. If the drawn rune matches the monster weakness, the monster takes damage.
+6. If the rune is wrong, the cast fizzles and no damage is dealt.
+7. Draw Ward as a small closed loop to recover HP; Ward is defensive and does not attack.
+8. Clear all monsters to reach the Seal Restored result screen.
+9. You can also open Stages for level selection and Settings for Music / Sound Effects toggles.
 
-The app is offline single-player. It has no login, no ads, no in-app purchases, no analytics SDK, and no external network gameplay requirement. ITSAppUsesNonExemptEncryption is false.</textarea>
+The app is offline single-player. It has no login, no ads, no in-app purchases, no analytics SDK, no tracking SDK, and no external network gameplay requirement. ITSAppUsesNonExemptEncryption is false.</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="sign-in-required">
       <div class="field-head"><h2>Sign-in Required</h2><button type="button" data-copy="sign-in-required">Copy</button></div>
-      <textarea id="sign-in-required" readonly>No</textarea>
+      <textarea id="sign-in-required" rows="3" readonly>No</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="demo-account">
+      <div class="field-head"><h2>Demo Account</h2><button type="button" data-copy="demo-account">Copy</button></div>
+      <textarea id="demo-account" rows="3" readonly>Not applicable. The app has no account system.</textarea>
+      <p class="count">Characters: <span></span></p>
+    </section>
+
+    <section class="field" data-field="last-name">
       <div class="field-head"><h2>Last Name</h2><button type="button" data-copy="last-name">Copy</button></div>
-      <textarea id="last-name" readonly>wangyu</textarea>
+      <textarea id="last-name" rows="3" readonly>wangyu</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="first-name">
       <div class="field-head"><h2>First Name</h2><button type="button" data-copy="first-name">Copy</button></div>
-      <textarea id="first-name" readonly>xiao</textarea>
+      <textarea id="first-name" rows="3" readonly>xiao</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="phone-number">
       <div class="field-head"><h2>Phone Number</h2><button type="button" data-copy="phone-number">Copy</button></div>
-      <textarea id="phone-number" readonly>+1 2096550297</textarea>
+      <textarea id="phone-number" rows="3" readonly>+1 2096550297</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="email">
       <div class="field-head"><h2>Email</h2><button type="button" data-copy="email">Copy</button></div>
-      <textarea id="email" readonly>croitorzamkov@gmail.com</textarea>
+      <textarea id="email" rows="3" readonly>croitorzamkov@gmail.com</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="bundle-id">
       <div class="field-head"><h2>Bundle ID</h2><button type="button" data-copy="bundle-id">Copy</button></div>
-      <textarea id="bundle-id" readonly>com.rosewood.charmpaintersigil</textarea>
+      <textarea id="bundle-id" rows="3" readonly>com.rosewood.charmpaintersigil</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="sku">
       <div class="field-head"><h2>SKU</h2><button type="button" data-copy="sku">Copy</button></div>
-      <textarea id="sku" readonly>charm-painter-sigil-ios</textarea>
+      <textarea id="sku" rows="3" readonly>charm-painter-sigil-ios</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
-      <div class="field-head"><h2>Category</h2><button type="button" data-copy="category">Copy</button></div>
-      <textarea id="category" readonly>Games / Puzzle</textarea>
+
+    <section class="field" data-field="primary-category">
+      <div class="field-head"><h2>Primary Category</h2><button type="button" data-copy="primary-category">Copy</button></div>
+      <textarea id="primary-category" rows="3" readonly>Games</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="secondary-category">
+      <div class="field-head"><h2>Secondary Category</h2><button type="button" data-copy="secondary-category">Copy</button></div>
+      <textarea id="secondary-category" rows="3" readonly>Puzzle</textarea>
+      <p class="count">Characters: <span></span></p>
+    </section>
+
+    <section class="field" data-field="age-rating-recommendation">
       <div class="field-head"><h2>Age Rating Recommendation</h2><button type="button" data-copy="age-rating-recommendation">Copy</button></div>
-      <textarea id="age-rating-recommendation" readonly>4+. Stylized fantasy spirits only, no realistic violence, no horror imagery, no user-generated content, no web access, no purchases.</textarea>
+      <textarea id="age-rating-recommendation" rows="3" readonly>4+. The game uses stylized fantasy monster icons and magical effects only. No realistic violence, horror, user-generated content, web access, purchases, or gambling.</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="export-compliance">
       <div class="field-head"><h2>Export Compliance</h2><button type="button" data-copy="export-compliance">Copy</button></div>
-      <textarea id="export-compliance" readonly>No. ITSAppUsesNonExemptEncryption is false.</textarea>
+      <textarea id="export-compliance" rows="3" readonly>No. ITSAppUsesNonExemptEncryption is false.</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
-    <section class="field">
+
+    <section class="field" data-field="device-support">
       <div class="field-head"><h2>Device Support</h2><button type="button" data-copy="device-support">Copy</button></div>
-      <textarea id="device-support" readonly>iPhone only. iPad support: No.</textarea>
+      <textarea id="device-support" rows="3" readonly>iPhone only. iPad support: No. Final archive UIDeviceFamily contains only 1.</textarea>
+      <p class="count">Characters: <span></span></p>
+    </section>
+
+    <section class="field" data-field="privacy-summary">
+      <div class="field-head"><h2>Privacy Summary</h2><button type="button" data-copy="privacy-summary">Copy</button></div>
+      <textarea id="privacy-summary" rows="3" readonly>No data collected. Progress and settings are stored locally on device only.</textarea>
       <p class="count">Characters: <span></span></p>
     </section>
   </main>
