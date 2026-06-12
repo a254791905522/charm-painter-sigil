@@ -78,7 +78,7 @@ find "$APP" -maxdepth 3 \( -name 'Assets.car' -o -name 'AppIcon*.png' -o -name '
 ```
 
 ## Deployment
-- [ ] Commit and push publish site to GitHub.
-- [ ] Deploy to Vercel with proxy `127.0.0.1:7897`.
-- [ ] Verify live URL: https://charm-painter-sigil.vercel.app
-- [ ] Verify privacy URL: https://charm-painter-sigil.vercel.app/privacy.html
+- [x] Commit and push publish site to GitHub.
+- [x] Deploy to Vercel with proxy `127.0.0.1:7897`.
+- [x] Verify live URL: https://charm-painter-sigil.vercel.app
+- [x] Verify privacy URL: https://charm-painter-sigil.vercel.app/privacy.html
