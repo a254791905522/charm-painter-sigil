@@ -1,64 +1,84 @@
-# Charm Painter Sigil Publish Checklist
+# Publish Checklist - Charm Painter Sigil
 
-## Gameplay Facts
+## Identity
+- [x] App name: Charm Painter Sigil
+- [x] Name is 3 English words.
+- [x] Bundle ID: com.rosewood.charmpaintersigil
+- [x] Bundle ID contains `rosewood`.
+- [x] PRODUCT_NAME: CharmPainterSigil
+- [x] CFBundleDisplayName / CFBundleName: Charm Painter Sigil
+- [x] Team ID configured: 7ZR52UNP43
 
-- The player draws rune shapes to cast charms against descending spirits.
-- Each spirit shows a weakness label and HP.
-- Correct rune casts damage; wrong rune casts fizzle; Ward restores HP.
-- The game has 50 local stages and stores unlock progress on device.
-- Visual theme: dark oriental rune fantasy with abyss-purple backgrounds, cyan/gold sigil glow, stone buttons, and spirit enemies.
+## Source-Grounded Gameplay
+- [x] Gameplay facts extracted from `SSCharmPainterScene.m`.
+- [x] Metadata describes matching monster/spirit weakness to drawn rune.
+- [x] Metadata mentions Flame, Frost, Rift, and Ward roles.
+- [x] Metadata avoids generic rune-puzzle claims not supported by code.
 
-## Release Identity
+## Template Residue / 4.3 Spam Risk
+- [x] No `tw_*` resource names found.
+- [x] No visible FPS/node debug overlay is enabled (`showsFPS = NO`, `showsNodeCount = NO`).
+- [x] ReleaseProject resources synchronized with main project assets.
+- [x] `image_prompts` is excluded from the Xcode target in `project.yml`.
+- [x] App Store copy is written for this game, not copied from a previous title.
 
-- App name: Charm Painter Sigil
-- PRODUCT_NAME: CharmPainterSigil
-- CFBundleDisplayName: Charm Painter Sigil
-- CFBundleName: Charm Painter Sigil
-- Bundle ID: com.rosewood.charmpaintersigil
-- Team ID: 7ZR52UNP43
-- Version: 1.0
-- Build: 1
-- Device support: iPhone only
-- iPad support: No
+## iPhone Only
+- [x] `TARGETED_DEVICE_FAMILY: '1'` in project-level settings.
+- [x] `TARGETED_DEVICE_FAMILY: '1'` in target-level settings.
+- [x] Final archive must show `UIDeviceFamily = (1)`.
+- [x] Portrait orientation only is acceptable because the final app is iPhone-only.
 
-## Files Generated
+## App Icon
+- [x] `ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon`.
+- [x] `CFBundleIconName = AppIcon`.
+- [x] Required icon PNG files exist: 120x120, 180x180, 152x152, 167x167, 1024x1024.
+- [x] App icons are opaque with `hasAlpha: no`.
+- [x] Re-check final archive for `Assets.car` and emitted `AppIcon*.png` after archive.
 
-- `GAMEPLAY_FACT_CARD.md`
-- `PUBLISH_CHECKLIST.md`
-- `appstore-review-text.html`
-- `keywords.txt`
-- `README.md`
-- `index.html`
-- `privacy.html`
-- `screenshots-1284x2778/*.png`
-- `screenshots-1242x2208/*.png`
+## Launch Screen
+- [x] `UILaunchStoryboardName = LaunchScreen`.
+- [x] `Base.lproj/LaunchScreen.storyboard` exists.
+- [x] Re-check final archive for `Base.lproj/LaunchScreen.storyboardc`.
 
 ## App Store Metadata
+- [x] `appstore-review-text.html` generated with textarea fields.
+- [x] `keywords.txt` generated.
+- [x] `README.md` generated.
+- [x] `privacy.html` generated.
+- [x] `index.html` generated with the LumiLink module structure.
+- [x] Contact: xiao wangyu / +1 2096550297 / croitorzamkov@gmail.com
 
-- Subtitle: Draw Runes, Seal Spirits
-- Promotional text: Read each spirit weakness, draw glowing runes, restore the seal, and clear 50 offline sigil stages.
-- Keywords: rune,sigil,charm,puzzle,drawing,magic,offline,levels,spirits,seal
-- Category: Games / Puzzle
-- Age rating recommendation: 4+
-- Support URL: https://charm-painter-sigil.vercel.app
-- Marketing URL: https://charm-painter-sigil.vercel.app
-- Privacy URL: https://charm-painter-sigil.vercel.app/privacy.html
+## Screenshots
+- [x] 5 screenshots generated for 1284x2778.
+- [x] 5 screenshots generated for 1242x2208.
+- [x] Screenshots show menu, weakness reading, rune drawing, spirit wave, and result flow.
 
-## Preflight Checks
+## Archive Verification
+Run from `/Users/wxj/888ios/batch-game`:
 
-- [ ] `project.yml` and `.xcodeproj` agree on Bundle ID and iPhone-only settings.
-- [ ] `CFBundleIconName = AppIcon`.
-- [ ] App icons include 120x120, 180x180, and 1024x1024 with no alpha.
-- [ ] `UILaunchStoryboardName = LaunchScreen`.
-- [ ] Final archive contains `Base.lproj/LaunchScreen.storyboardc`.
-- [ ] Final archive `UIDeviceFamily` contains only `1`.
-- [ ] Final archive contains `Assets.car` and emitted AppIcon PNGs.
-- [ ] No `tw_*` resources remain.
-- [ ] No visible FPS/node debug overlay is enabled.
-- [ ] App Store text is specific to rune drawing, spirit weaknesses, and seal restoration.
+```bash
+xcodebuild \
+  -project CharmPainter-ReleaseProject/CharmPainterSigil.xcodeproj \
+  -scheme CharmPainter \
+  -configuration Release \
+  -sdk iphoneos \
+  -archivePath /Users/wxj/888ios/batch-game/CharmPainter-Release/CharmPainterSigil.xcarchive \
+  CODE_SIGNING_ALLOWED=NO \
+  archive
+```
 
-## Contact
+Then inspect:
 
-- Name: xiao wangyu
-- Phone: +1 2096550297
-- Email: croitorzamkov@gmail.com
+```bash
+APP=/Users/wxj/888ios/batch-game/CharmPainter-Release/CharmPainterSigil.xcarchive/Products/Applications/CharmPainterSigil.app
+/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP/Info.plist"
+/usr/libexec/PlistBuddy -c 'Print :CFBundleDisplayName' "$APP/Info.plist"
+/usr/libexec/PlistBuddy -c 'Print :UIDeviceFamily' "$APP/Info.plist"
+find "$APP" -maxdepth 3 \( -name 'Assets.car' -o -name 'AppIcon*.png' -o -name 'LaunchScreen.storyboardc' \) -print | sort
+```
+
+## Deployment
+- [ ] Commit and push publish site to GitHub.
+- [ ] Deploy to Vercel with proxy `127.0.0.1:7897`.
+- [ ] Verify live URL: https://charm-painter-sigil.vercel.app
+- [ ] Verify privacy URL: https://charm-painter-sigil.vercel.app/privacy.html

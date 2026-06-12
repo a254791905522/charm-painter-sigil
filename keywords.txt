@@ -1,1 +1,1 @@
-rune,sigil,charm,puzzle,drawing,magic,offline,levels,spirits,seal
+rune,sigil,charm,drawing,puzzle,spirits,seal,monster,offline,magic
